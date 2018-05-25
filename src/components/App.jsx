@@ -23,13 +23,13 @@ class App extends React.Component {
         body: "Haha pun funny joke..."
       }
     ]
-  };
+  }
 
   render() {
     return (
       <TicketContainer tickets={this.state.tickets}/>
-    );
-  };
+    )
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
