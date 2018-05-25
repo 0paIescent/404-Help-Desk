@@ -25,13 +25,25 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [
-          path.join(__dirname, 'src'),
-          /node_modules/
-        ],
+        include: /node_modules/,
         use: [
           "style-loader",
           "css-loader"
+        ]
+      },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, "src"),
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: "[name]__[local]___[hash:base64:5]"
+            }
+          }
         ]
       },
       {
@@ -57,9 +69,6 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    })
+    new MiniCssExtractPlugin("styles.css")
   ]
 };

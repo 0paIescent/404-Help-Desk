@@ -1,9 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {Table} from "semantic-ui-react";
-import _ from "lodash";
+import React from "react"
+import PropTypes from "prop-types"
+import {Table} from "semantic-ui-react"
+import _ from "lodash"
 
-import Ticket from "../Ticket.jsx";
+import Ticket from "../Ticket.jsx"
+import styles from "../../styles.css"
 
 class TicketContainer extends React.Component {
   state = {
@@ -35,7 +36,7 @@ class TicketContainer extends React.Component {
     const {sortColumn, sortDirection} = this.state
 
     return (
-      <div>
+      <div className={styles.ticketContainer}>
         <Table celled structured sortable>
           <Table.Header>
             <Table.Row>
@@ -87,4 +88,4 @@ TicketContainer.propTypes = {
   tickets: PropTypes.array.isRequired
 }
 
-export default TicketContainer;
+export default TicketContainer

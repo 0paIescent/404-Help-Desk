@@ -1,7 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from "react"
+import ReactDOM from "react-dom"
 
-import TicketContainer from "./containers/TicketContainer.jsx";
+import Sidenav from "./Sidenav.jsx"
+import TicketContainer from "./containers/TicketContainer.jsx"
+
+import styles from "../styles.css"
+
+console.log(styles)
 
 class App extends React.Component {
   state = {
@@ -20,16 +25,19 @@ class App extends React.Component {
         assignee: "Jacob Harrison",
         date_created: "05/24/18 01:34 PM",
         subject: "Pun",
-        body: "Haha pun funny joke..."
+        body: "Haha pun funny joke"
       }
     ]
   }
 
   render() {
     return (
-      <TicketContainer tickets={this.state.tickets}/>
+      <div className={styles.rootContainer}>
+        <Sidenav />
+        <TicketContainer tickets={this.state.tickets} />
+      </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"))

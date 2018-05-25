@@ -1,10 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {Table, Popup} from "semantic-ui-react";
+import React from "react"
+import PropTypes from "prop-types"
+import {Table, Popup} from "semantic-ui-react"
 
 class Ticket extends React.Component {
   render() {
     const {id, subject, assignee, creator, date_created} = this.props.ticket
+
+    // TODO: Add hoverIntent so that the date popup opens after a delay of ~1s
 
     return (
       <Table.Row>
@@ -32,4 +34,4 @@ Ticket.propTypes = {
   ticket: PropTypes.object.isRequired
 }
 
-export default Ticket;
+export default Ticket
